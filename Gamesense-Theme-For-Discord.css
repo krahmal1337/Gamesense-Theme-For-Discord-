@@ -1,0 +1,169 @@
+.theme-dark,
+.theme-light,
+:root {
+    --title-gradient: linear-gradient(to right, #37b1da 0, #c948cd 50%, #cce335 100%);
+    --primary-color: #75a00d;
+    --outline-color: #0a0a0a;
+    --outline-lightcolor: #303030;
+    --app-color: #111;
+    --channels-color: #111;
+    --channels-darker: #0c0c0c;
+    --channels-selected: #191919;
+    --channels-text-selected: #9fca2b;
+    --chat-color: #1a1a1a;
+    --mention-color: #1f1f1f;
+    --scrollbar-bg: #2d2d2d;
+    --scrollbar-thumb: #414141;
+    --text-input: #191919;
+    --dropdown-color: #232323;
+    --link-color: #96c83c;
+    --channel-radius: 5px;
+    --text-color: #cbcbcb;
+    --text-darker: #b0b0b0;
+    --font: 'Press Start 2P', 'Verdana', monospace;
+    --important-notification-l: #f84747;
+    --important-notification: #d12020;
+    --background-primary: #141414!important;
+    --background-secondary: #111!important;
+    --background-secondary-alt: #292929!important;
+    --background-tertiary: #0c0c0c!important;
+    --background-accent: #242424!important;
+    --background-floating: black!important;
+    --background-modifier-hover: rgba(255, 255, 255, 0.01)!important;
+    --background-modifier-active: rgba(255, 255, 255, 0.03)!important;
+    --background-modifier-selected: rgba(255, 255, 255, 0.04)!important;
+    --background-modifier-accent: hsla(0, 0%, 100%, 0.06)!important;
+    --channeltextarea-background: var(--background-accent)!important;
+    --deprecated-card-bg: rgba(0, 0, 0, 0.2)!important;
+    --deprecated-card-editable-bg: rgba(0, 0, 0, 0.1)!important;
+    --deprecated-text-input-bg: var(--deprecated-card-editable-bg)!important;
+    --deprecated-text-input-border: var(--background-floating)!important;
+    --deprecated-text-input-border-disabled: var(--background-tertiary)!important;
+    --activity-card-background: var(--background-primary)!important;
+    --channels-default: #9f9f9f!important;
+    --text-muted: #b6b6b6!important;
+    --text-normal: #fbfbfb!important;
+    --interactive-normal: #c8c8c8!important;
+    --interactive-hover: #dcddde!important;
+    --interactive-active: #fff!important;
+    --interactive-muted: #747474!important;
+    --header-primary: white!important;
+    --header-secondary: #c9c9c9!important;
+    --toast-background: var(--background-primary)!important;
+    --toast-header: var(--background-tertiary)!important;
+    --toast-contents: var(--background-secondary)!important;
+    --toast-box-shadow: rgba(0, 0, 0, 0.2)!important;
+    --toast-border: var(--background-tertiary)!important
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+a { color: var(--link-color) }
+body { background-color: var(--app-color) }
+input, textarea { font-family: var(--font)!important }
+* { font-size: 100% }
+strong { font-weight: 500 }
+:focus { outline: none!important }
+
+/* Пиксельный шрифт — крупнее */
+[class*="name_"],
+[class*="username_"],
+[class*="channelName_"],
+[class*="title_"],
+[class*="header_"],
+[class*="category_"] {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Рамка окна */
+[class*="appMount"] {
+    left: 8px !important;
+    top: 8px !important;
+    height: calc(100vh - 16px) !important;
+    width: calc(100vw - 16px) !important;
+    box-shadow: 0 0 0 1px #3c3c3c, 0 0 0 4px #282828, 0 0 0 5px #3c3c3c, 0 0 0 6px #0a0a0a !important;
+    border-radius: 4px !important;
+    background-image: url("https://i.imgur.com/Cp2UvW0.gif");
+}
+
+/* Шапка — точно как в оригинальном коде темы */
+[class*="bar_c38106"] {
+    background: linear-gradient(to right, #37b1da 0, #c948cd 50%, #cce335 100%) !important;
+    box-shadow: inset 0 -20px 0 0 #111, inset 0 -2px 0 0 rgba(0,0,0,0.5) !important;
+    border-bottom: 1px solid #303030 !important;
+    height: 22px !important;
+    min-height: 22px !important;
+    max-height: 22px !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+}
+
+/* Запасные селекторы — то же самое */
+[class*="typeWindows"],
+[class*="titleBar"],
+[class*="title-bar"],
+[class*="topBar"] {
+    background: linear-gradient(to right, #37b1da 0, #c948cd 50%, #cce335 100%) !important;
+    box-shadow: inset 0 -20px 0 0 #111, inset 0 -2px 0 0 rgba(0,0,0,0.5) !important;
+    border-bottom: 1px solid #303030 !important;
+    height: 22px !important;
+    min-height: 22px !important;
+    max-height: 22px !important;
+}
+
+/* Скрыть лого Discord */
+[class*="wordmark"] svg { display: none !important; }
+[class*="wordmark"] { display: none !important; }
+
+/* Надпись gamesense на тёмном баре */
+body::before {
+    content: 'gamesense';
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #cbcbcb;
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 99999;
+    pointer-events: none;
+    letter-spacing: 1px;
+}
+
+/* Кнопки управления окном */
+[class*="winButton"],
+[class*="win-button"] {
+    background-color: transparent !important;
+    color: #888888 !important;
+    fill: #888888 !important;
+}
+
+/* Mentions */
+[class*="mention_"] { background-color: var(--primary-color)!important }
+.mention { color: var(--primary-color)!important; background: var(--mention-color)!important }
+
+/* Slide-in анимация */
+@keyframes slide-up {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+[class*="message_"] { animation: slide-up 0.4s ease; }
+
+/* Фоны */
+[class*="panels_"] { background-color: var(--background-tertiary) }
+[class*="sidebar_"] { background: var(--background-tertiary) }
+[class*="chat_"] { background-color: var(--chat-color) }
+
+/* Скроллбар */
+::-webkit-scrollbar-thumb { background-color: var(--background-secondary-alt)!important; border-color: transparent!important }
+::-webkit-scrollbar-track { background-color: var(--background-secondary)!important }
+::-webkit-scrollbar-corner { background-color: transparent!important }
+
+/* Попапы */
+[class*="popout_"] { background-color: var(--background-tertiary)!important; border-color: var(--background-tertiary)!important }
+[class*="autocomplete_"] { background-color: var(--background-secondary) }
+
+.blockquoteDivider__96157 { background-color: rgba(100, 100, 100, 0.4) }
